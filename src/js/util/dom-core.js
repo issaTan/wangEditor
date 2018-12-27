@@ -382,9 +382,14 @@ DomElement.prototype = {
     },
 
     // 获取 value
-    val: function () {
+    val: function (value) {
         const elem = this[0]
-        return elem.value.trim()
+        if (value == null) {
+            return elem.value.trim()
+        } else {
+            elem.value = value
+            return this
+        }
     },
 
     // focus

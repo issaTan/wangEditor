@@ -67,6 +67,13 @@ Menus.prototype = {
             const droplist = menu.droplist
             const panel = menu.panel
 
+          // 切换类型，例如 源码、全屏
+            if (type === 'toggle' && menu.onClick) {
+                $elem.on('click', e => {
+                    menu.onClick(e)
+                })
+            }
+
             // 点击类型，例如 bold
             if (type === 'click' && menu.onClick) {
                 $elem.on('click', e => {
